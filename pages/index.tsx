@@ -1,4 +1,8 @@
 import Head from "next/head";
+import Image from "next/image";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from "react-icons/ai";
+import hero from "../public/hero.svg";
 
 export default function Home() {
 	return (
@@ -9,9 +13,43 @@ export default function Home() {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main>
-				<section className="bg-blue-800 min-h-screen">
-					<h1>Hola</h1>
+			<main className="bg-white px-10 font-poppins">
+				<section className="min-h-screen">
+					<nav className="py-8 mb-12 flex justify-between">
+						<div>
+							<Image src="/banner.png" alt="Logo" width={158} height={39} />
+						</div>
+						<ul className="flex items-center">
+							<li>
+								<BsFillMoonStarsFill className="cursor-pointer text-2xl" />
+							</li>
+							<li>
+								<a
+									className="bg-babyblue text-darkcolor font-semibold px-4 py-2 border-none rounded-md ml-8 uppercase "
+									href="#"
+								>
+									Resume
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div className="text-center p-10">
+						<h2 className="text-4xl py-2 text-babyblue">Antonio Cuadra</h2>
+						<h3 className="text-xl py-2">Full Stack Developer</h3>
+						<p className="text-md py-5 leading-8 text-gray-800">
+							Developer with a proven track record of delivering high-quality,
+							scalable and reliable web applications with a wide range of
+							technologies.
+						</p>
+					</div>
+					<div className="text-5xl flex justify-center gap-16 py-2 text-gray-600">
+						<AiFillLinkedin />
+						<AiFillGithub />
+						<AiFillGitlab />
+					</div>
+					<div className="relative flex justify-center mt-14">
+						<Image src="/hero.svg" width={350} height={350} alt="Hero Navbar" />
+					</div>
 				</section>
 			</main>
 		</>
