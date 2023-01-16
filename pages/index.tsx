@@ -4,9 +4,13 @@ import Image from 'next/image';
 import { BsFillMoonStarsFill, BsFillSunFill } from 'react-icons/bs';
 import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from 'react-icons/ai';
 import web1 from '/public/projects/web1.png';
+import hero from '/public/hero.svg';
 import frontend from '/public/frontend.svg';
+import frontend2 from '/public/frontend2.svg';
 import backend from '/public/backend.svg';
+import backend2 from '/public/backend2.svg';
 import database from '/public/database.svg';
+import database2 from '/public/database2.svg';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
@@ -14,6 +18,7 @@ export default function Home() {
     {
       id: 0,
       image: frontend,
+      image_light: frontend2,
       title: 'Frontend',
       description: `I always strive to stay up-to-date with the latest technologies
   to ensure that my work is both cutting-edge and user-friendly.`,
@@ -22,6 +27,7 @@ export default function Home() {
     {
       id: 1,
       image: backend,
+      image_light: backend2,
       title: 'Backend',
       description: `Experience in creating robust and scalable systems to support the functionality of a website or application.`,
       technologies: ['Node', 'Python', 'Django', 'Express'],
@@ -29,6 +35,7 @@ export default function Home() {
     {
       id: 2,
       image: database,
+      image_light: database2,
       title: 'Database',
       description: `Strong background in managing and working with databases, able to implement efficient and effective database solutions.`,
       technologies: ['MongoDB', 'Firebase', 'PostgreSQL'],
@@ -47,7 +54,12 @@ export default function Home() {
         <section className="">
           <nav className="py-8 mb-12 flex justify-between">
             <div>
-              <Image src="/banner.png" alt="Logo" width={158} height={39} />
+              {darkMode && (
+                <Image src="/banner.png" alt="Logo" width={158} height={39} />
+              )}
+              {!darkMode && (
+                <Image src="/banner2.png" alt="Logo" width={158} height={39} />
+              )}
             </div>
             <ul className="flex items-center">
               <li>
@@ -104,14 +116,8 @@ export default function Home() {
               target="_blank"
             />
           </div>
-          <div className="relative flex justify-center mt-14 overflow-hidden">
-            <Image
-              src="/hero.svg"
-              width={500}
-              height={350}
-              alt="Hero Navbar"
-              className="w-92 md:96 md:h-80"
-            />
+          <div className="mx-auto relative flex justify-center mt-14 overflow-hidden">
+            <Image src={hero} alt="Hero Navbar" width={750} height={550} />
           </div>
         </section>
         <section className="">
@@ -140,19 +146,17 @@ export default function Home() {
               the best solutions.
             </p>
           </div>
-          <div className="lg:flex gap-10">
+          <div className="lg:flex xl:container gap-10 lg:mx-auto">
             {skills.map(item => (
               <div
                 key={item.id}
                 className="bg-darkcolor text-center shadow-lg p-8 rounded-xl my-10 flex-1 dark:bg-colorlight"
               >
-                <div className="flex justify-center">
-                  <Image
-                    src={item.image}
-                    width={120}
-                    height={120}
-                    alt={item.title}
-                  />
+                <div className="flex justify-center w-64 h-64 lg:w-52 lg:h-52 mx-auto">
+                  {darkMode && <Image src={item.image} alt={item.title} />}{' '}
+                  {!darkMode && (
+                    <Image src={item.image_light} alt={item.title} />
+                  )}
                 </div>
                 <h3 className="text-babyblue text-lg font-medium pt-8 pb-2 dark:text-darkcolor dark:font-semibold">
                   {item.title}
@@ -191,6 +195,7 @@ export default function Home() {
               <Image
                 src={web1}
                 alt="Web 1"
+                priority
                 className="rounded-lg object-cover shadow-lg projects"
               />
             </div>
