@@ -7,6 +7,7 @@ import { AiFillLinkedin, AiFillGithub, AiFillGitlab } from 'react-icons/ai';
 import web1 from '/public/projects/web1.webp';
 import web2 from '/public/projects/web2.webp';
 import web3 from '/public/projects/web3.webp';
+import web4 from '/public/projects/web4.webp';
 import hero from '/public/hero.svg';
 import frontend from '/public/frontend.svg';
 import frontend2 from '/public/frontend2.svg';
@@ -36,22 +37,38 @@ const projects = [
   {
     id: 0,
     image: web1,
-    title: 'Movies web',
+    title: 'Movies Website',
+    description:
+      'Website where fetching from an API and displaying movies, shows and the user can like and dislike them.',
+    repository: 'https://gitlab.com/acuadraq/applaudo-cinema',
+    web: 'https://applaudo-cinema.vercel.app/',
   },
   {
     id: 1,
     image: web2,
-    title: 'Marvel API page',
+    title: 'Marvel Comics',
+    description:
+      'Fetching from the Marvel API, and using Redux to manage the bookings of the user.',
+    repository: 'https://gitlab.com/acuadraq/week_8-marvel',
+    web: 'https://week-8-marvel.vercel.app/',
   },
   {
     id: 2,
     image: web3,
     title: 'Todo list',
+    description:
+      'Todo List with the use of localstorage and drag and drop functionality.',
+    repository: 'https://github.com/AlexC01/To-Do-List',
+    web: 'https://alexc01.github.io/To-Do-List/',
   },
   {
     id: 3,
-    image: web1,
-    title: 'Web 1',
+    image: web4,
+    title: 'Professional Portfolio',
+    description:
+      'Portfolio to showcase my projects and skills using NextJs and Framer-Motion.',
+    repository: 'https://github.com/AlexC01/portfolio',
+    web: 'https://acuadraq.com/',
   },
 ];
 
@@ -91,7 +108,7 @@ export default function Home() {
         <title>A. Cuadra Portfolio</title>
         <meta name="description" content="Portfolio" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.png" />
       </Head>
       <main className="bg-white px-10 font-poppins md:px-20 dark:bg-darkcolor">
         <div className=" 2xl:container 2xl:mx-auto">
@@ -246,7 +263,7 @@ export default function Home() {
                 efficient back-end logic.
               </p>
             </div>
-            <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+            <div className="flex flex-col gap-7 py-10 lg:flex-row lg:flex-wrap">
               {projects.map(project => (
                 <motion.div
                   initial="hidden"
@@ -256,12 +273,42 @@ export default function Home() {
                   className="basis-1/3 flex-1"
                 >
                   <motion.div variants={cardVariants}>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      priority
-                      className="rounded-lg object-cover shadow-lg projects"
-                    />
+                    <div className="card-container">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        priority
+                        className="rounded-lg object-cover shadow-lg projects"
+                      />
+                      <div className="body">
+                        <div className="flex justify-center items-center h-[100%] px-14 flex-col">
+                          <h3 className="text-lg font-semibold text-center text-colorlight">
+                            {project.title}
+                          </h3>
+                          <p className="text-colorlight text-center py-3">
+                            {project.description}
+                          </p>
+                          <div className="flex items-center mt-3 gap-3">
+                            <Link
+                              className="font-semibold px-2 py-1 text-sm border-none rounded-md uppercase bg-babyblue text-darkcolor"
+                              href={project.repository}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Repository
+                            </Link>
+                            <Link
+                              className="font-semibold px-2 py-1 text-sm border-none rounded-md uppercase bg-darkcolor  text-babyblue "
+                              href={project.web}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Real Time
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 </motion.div>
               ))}
