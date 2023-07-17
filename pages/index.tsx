@@ -263,7 +263,7 @@ export default function Home() {
                 efficient back-end logic.
               </p>
             </div>
-            <div className="flex flex-col gap-7 py-10 lg:flex-row lg:flex-wrap">
+            <div className="flex flex-col gap-16 lg:gap-7 py-10 lg:flex-row lg:flex-wrap">
               {projects.map(project => (
                 <motion.div
                   initial="hidden"
@@ -277,15 +277,14 @@ export default function Home() {
                       <Image
                         src={project.image}
                         alt={project.title}
-                        priority
                         className="rounded-lg object-cover shadow-lg projects"
                       />
                       <div className="body">
-                        <div className="flex justify-center items-center h-[100%] px-14 flex-col">
-                          <h3 className="text-lg font-semibold text-center text-colorlight">
+                        <div className="flex justify-center items-center h-[100%] px-2 md:px-14 flex-col">
+                          <h3 className="text-lg font-semibold text-center dark:text-colorlight text-darkcolor lg:text-colorlight lg:dark:text-colorlight mt-2">
                             {project.title}
                           </h3>
-                          <p className="text-colorlight text-center py-3">
+                          <p className="dark:text-colorlight text-darkcolor text-center py-3 lg:text-colorlight lg:dark:text-colorlight">
                             {project.description}
                           </p>
                           <div className="flex items-center mt-3 gap-3">
@@ -298,7 +297,7 @@ export default function Home() {
                               Repository
                             </Link>
                             <Link
-                              className="font-semibold px-2 py-1 text-sm border-none rounded-md uppercase bg-darkcolor  text-babyblue "
+                              className="font-semibold px-2 py-1  text-sm dark:border-babyblue border-[1px] lg:border-none rounded-md uppercase bg-darkcolor  text-babyblue "
                               href={project.web}
                               target="_blank"
                               rel="noreferrer"
