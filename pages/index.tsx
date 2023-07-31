@@ -35,6 +35,15 @@ const container: Variants = {
 
 const projects = [
   {
+    id: 3,
+    image: web4,
+    title: 'Techtales-AI',
+    description:
+      'Create articles with AI, just typing a title and let the AI write it for you.',
+    repository: 'https://github.com/AlexC01/sheol-articles',
+    web: 'https://techtales-ai.vercel.app/',
+  },
+  {
     id: 0,
     image: web1,
     title: 'Movies Website',
@@ -60,15 +69,6 @@ const projects = [
       'Todo List with the use of localstorage and drag and drop functionality.',
     repository: 'https://github.com/AlexC01/To-Do-List',
     web: 'https://alexc01.github.io/To-Do-List/',
-  },
-  {
-    id: 3,
-    image: web4,
-    title: 'Professional Portfolio',
-    description:
-      'Portfolio to showcase my projects and skills using NextJs and Framer-Motion.',
-    repository: 'https://github.com/AlexC01/portfolio',
-    web: 'https://acuadraq.com/',
   },
 ];
 
