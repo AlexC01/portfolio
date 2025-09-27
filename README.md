@@ -1,11 +1,17 @@
-# Portfolio
+# Personal Portfolio - Antonio Cuadra
 
-![](public/portfolio.png)
+This repository contains the source code for my personal portfolio website, built with Next.js and Tailwind CSS. The site is designed to showcase my skills and projects as a full-stack developer, with a focus on a clean, modern, and high-contrast aesthetic.
 
-## Description
+**Live Site:** [**www.acuadraq.com**](https://www.acuadraq.com/)
 
-This is my profesional portfolio, here you can find information about me, my skills, my projects and my contact information.
+![Portfolio Screenshot](./public/portfolio-screenshot.png)
 
-- It is using NextJS and tailwindcss with some plugins for animations.
+## 💻 Tech Stack
 
-If you want to see it in real time use this url: https://www.acuadraq.com/
+This portfolio itself was built using a modern, performant tech stack:
+
+* **Framework:** [Next.js](https://nextjs.org/) 
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **Animations:** [Framer Motion](https://www.framer.com/motion/)
+* **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
